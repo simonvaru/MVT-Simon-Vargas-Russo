@@ -1,9 +1,14 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from proyectoClase import views # from proyectoClase en lugar de home
+
 
 urlpatterns = [
-    # path('home/', include('home.urls')),
-    path('', include('home.urls')),
-    # path('', include('otraAplicacion.urls')),
-    path('admin/', admin.site.urls),
+    path('', views.index),
+    path('mi-template/', views.mi_template),
+    path('mi-template/<str:nombre>', views.tu_template),
+    path('prueba-template/', views.prueba_template),
+    path('ver-personas/', views.ver_personas),
+    path('crear-persona/<str:nombre>/<str:apellido>/', views.crear_persona),
+    # path('hola/', hola),
+    # path('fecha/', fecha),
 ]

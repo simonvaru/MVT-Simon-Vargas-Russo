@@ -30,7 +30,7 @@ def mi_template(request):
 
 def tu_template(request, nombre):
     
-    template = loader.get_template('home/tu_template.html')
+    template = loader.get_template('tu_template.html')
     template_renderizado = template.render({'persona': nombre})
         
     return HttpResponse(template_renderizado)
@@ -41,7 +41,7 @@ def prueba_template(request):
         'valor_aleatorio': random.randrange(1,11)
     }
     
-    template = loader.get_template('home/prueba_template.html')
+    template = loader.get_template('prueba_template.html')
     template_renderizado = template.render(mi_contexto)
         
     return HttpResponse(template_renderizado)
@@ -57,7 +57,7 @@ def crear_persona(request, nombre, apellido):
     
     # return HttpResponse(template_renderizado)
     
-    return render(request, 'home/crear_persona.html', {'persona': persona})
+    return render(request, 'crear_persona.html', {'persona': persona})
 
 
 def ver_personas(request):
@@ -68,8 +68,8 @@ def ver_personas(request):
     # template_renderizado = template.render({'personas': personas})
     # return HttpResponse(template_renderizado)
     
-    return render(request, 'home/ver_personas.html', {'personas': personas})
+    return render(request, 'ver_personas.html', {'personas': personas}) 
 
 def index(request):
     
-    return render(request, 'home/index.html')
+    return render(request, 'index.html')
